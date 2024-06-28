@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// Function to delete an element from an array
+void deleteElement(vector<int>& arr, int position) {
+    if (position < 0 || position >= arr.size()) {
+        cout << "Invalid position!" << endl;
+        return;
+    }
+
+    arr.erase(arr.begin() + position);
+}
+
+// Function to display the array
+void displayArray(const vector<int>& arr) {
+    for (int i : arr) {
+        cout << i << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    // Initialize a dynamic array
+    vector<int> arr = {1, 2, 3, 4, 5};
+
+    cout << "Initial array: ";
+    displayArray(arr);
+
+    // Delete an element from position 2
+    deleteElement(arr, 2);
+    cout << "Array after deleting element at position 2: ";
+    displayArray(arr);
+
+    // Delete an element from the beginning
+    deleteElement(arr, 0);
+    cout << "Array after deleting element at position 0: ";
+    displayArray(arr);
+
+    // Delete an element from the end
+    deleteElement(arr, arr.size() - 1);
+    cout << "Array after deleting last element: ";
+    displayArray(arr);
+
+    return 0;
+}
