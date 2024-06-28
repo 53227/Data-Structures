@@ -1,0 +1,22 @@
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+    queue<int> q;
+
+    // Enqueueing elements into the queue
+    q.push(5);
+    q.push(10);
+    q.push(15);
+
+    // Deleting elements from the queue
+    cout << "Deleting elements from the queue:" << endl;
+    while (!q.empty()) {
+        cout << "Dequeued element: " << q.front() << endl;
+        q.pop();
+    }
+
+    return 0;
+}
