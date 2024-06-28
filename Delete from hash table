@@ -1,0 +1,38 @@
+#include <iostream>
+#include <unordered_map>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Create an unordered_map (hash table)
+    unordered_map<string, int> hashTable;
+
+    // Insert key-value pairs into the hash table
+    hashTable["Alice"] = 25;
+    hashTable["Bob"] = 30;
+    hashTable["Charlie"] = 35;
+    hashTable["David"] = 40;
+
+    // Display the hash table
+    cout << "Initial hash table contents:" << endl;
+    for (const auto& pair : hashTable) {
+        cout << pair.first << ": " << pair.second << endl;
+    }
+
+    // Delete a key-value pair
+    string keyToDelete = "Charlie";
+    if (hashTable.erase(keyToDelete)) {
+        cout << "\nDeleted " << keyToDelete << " from hash table." << endl;
+    } else {
+        cout << "\nKey " << keyToDelete << " not found in hash table." << endl;
+    }
+
+    // Display the hash table after deletion
+    cout << "\nHash table contents after deletion:" << endl;
+    for (const auto& pair : hashTable) {
+        cout << pair.first << ": " << pair.second << endl;
+    }
+
+    return 0;
+}
