@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    stack<int> s;
+
+    // Pushing elements into the stack
+    s.push(5);
+    s.push(10);
+    s.push(15);
+
+    // Deleting elements from the stack
+    cout << "Deleting elements from the stack:" << endl;
+    while (!s.empty()) {
+        cout << "Popped element: " << s.top() << endl;
+        s.pop();
+    }
+
+    return 0;
+}
