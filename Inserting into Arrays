@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// Function to insert an element into an array
+void insertElement(vector<int>& arr, int element, int position) {
+    if (position < 0 || position > arr.size()) {
+        cout << "Invalid position!" << endl;
+        return;
+    }
+
+    arr.insert(arr.begin() + position, element);
+}
+
+// Function to display the array
+void displayArray(const vector<int>& arr) {
+    for (int i : arr) {
+        cout << i << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    // Initialize a dynamic array
+    vector<int> arr = {1, 2, 3, 4, 5};
+
+    cout << "Initial array: ";
+    displayArray(arr);
+
+    // Insert an element at position 2
+    insertElement(arr, 10, 2);
+    cout << "Array after inserting 10 at position 2: ";
+    displayArray(arr);
+
+    // Insert an element at the beginning
+    insertElement(arr, 20, 0);
+    cout << "Array after inserting 20 at position 0: ";
+    displayArray(arr);
+
+    // Insert an element at the end
+    insertElement(arr, 30, arr.size());
+    cout << "Array after inserting 30 at the end: ";
+    displayArray(arr);
+
+    return 0;
+}
