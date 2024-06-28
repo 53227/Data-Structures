@@ -1,0 +1,26 @@
+#include <iostream>
+#include <unordered_map>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Create an unordered_map (hash table)
+    unordered_map<string, int> hashTable;
+
+    // Insert key-value pairs into the hash table
+    hashTable["Alice"] = 25;
+    hashTable["Bob"] = 30;
+    hashTable["Charlie"] = 35;
+
+    // Another way to insert a key-value pair
+    hashTable.insert(make_pair("David", 40));
+
+    // Display the hash table
+    cout << "Hash table contents:" << endl;
+    for (const auto& pair : hashTable) {
+        cout << pair.first << ": " << pair.second << endl;
+    }
+
+    return 0;
+}
